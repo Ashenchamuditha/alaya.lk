@@ -19,6 +19,7 @@ const About = () => {
                 <GraduationCap className="text-brand mb-4" size={32} />
                 <h4 className="text-white font-bold mb-1">Education</h4>
                 <p className="text-xs text-gray-500 uppercase tracking-tighter">BSc. Computer Science Graduate</p>
+                <p className="text-[10px] text-gray-600 font-medium uppercase tracking-widest mt-1">University of Bedfordshire</p>
               </div>
               <div className="p-6 bg-surface rounded-2xl border border-border">
                 <User className="text-brand mb-4" size={32} />
