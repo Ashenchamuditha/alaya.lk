@@ -11,6 +11,7 @@ export interface Project {
   videoUrl?: string;
   image: string;
   featured?: boolean;
+  isLiveBlocked?: boolean;
 }
 
 export interface Skill {

@@ -31,7 +31,13 @@ const ProjectCard = ({ project, index }: ProjectCardProps) => (
              <motion.a whileHover={{ scale: 1.1 }} href={project.githubUrl} target="_blank" className="w-10 h-10 bg-white rounded-full flex items-center justify-center text-black shadow-xl"><Github size={16} /></motion.a>
            )}
            {project.liveUrl && (
-             <motion.a whileHover={{ scale: 1.1 }} href={project.liveUrl} target="_blank" className="w-10 h-10 bg-brand rounded-full flex items-center justify-center text-white shadow-xl"><ExternalLink size={16} /></motion.a>
+             project.isLiveBlocked ? (
+               <div className="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center text-gray-500 cursor-not-allowed shadow-xl" title="Live version currently unavailable">
+                 <ExternalLink size={16} />
+               </div>
+             ) : (
+               <motion.a whileHover={{ scale: 1.1 }} href={project.liveUrl} target="_blank" className="w-10 h-10 bg-brand rounded-full flex items-center justify-center text-white shadow-xl"><ExternalLink size={16} /></motion.a>
+             )
            )}
         </div>
       </div>
@@ -66,14 +72,20 @@ const ProjectCard = ({ project, index }: ProjectCardProps) => (
       </div>
 
       <div className="mt-8">
-        <a 
-          href={project.liveUrl || "#"} 
-          target="_blank" 
-          rel="noopener noreferrer"
-          className="inline-flex items-center gap-2 px-6 py-2 bg-brand/10 hover:bg-brand/20 border border-brand/20 rounded-lg text-brand text-sm font-bold transition-all"
-        >
-          Visit Project <ExternalLink size={14} />
-        </a>
+        {project.isLiveBlocked ? (
+          <div className="inline-flex items-center gap-2 px-6 py-2 bg-white/5 border border-white/10 rounded-lg text-gray-500 text-sm font-bold cursor-not-allowed">
+           Visit Project <ExternalLink size={14} />
+          </div>
+        ) : (
+          <a 
+            href={project.liveUrl || "#"} 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 px-6 py-2 bg-brand/10 hover:bg-brand/20 border border-brand/20 rounded-lg text-brand text-sm font-bold transition-all"
+          >
+            Visit Project <ExternalLink size={14} />
+          </a>
+        )}
       </div>
     </div>
   </motion.div>

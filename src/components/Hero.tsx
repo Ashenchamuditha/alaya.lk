@@ -24,8 +24,65 @@ const Hero = () => {
   };
 
   return (
-    <header className="min-h-screen flex items-center justify-center pt-32 pb-20 px-6">
-      <div className="max-w-7xl mx-auto w-full">
+    <header className="relative min-h-screen flex items-center justify-center pt-32 pb-20 px-6 overflow-hidden">
+      {/* Background Elements */}
+      <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
+        {/* Background Image - High Visibility Tech Image */}
+        <div className="absolute inset-0 z-0">
+          <img 
+            src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=2070&auto=format&fit=crop" 
+            alt="Engineering Background"
+            className="w-full h-full object-cover opacity-30"
+          />
+          <div className="absolute inset-0 bg-surface/60 mix-blend-multiply" />
+          <div className="absolute inset-0 bg-gradient-to-b from-surface via-transparent to-surface" />
+        </div>
+
+        {/* Grid Pattern with Mask */}
+        <div 
+          className="absolute inset-0 grid-pattern opacity-30" 
+          style={{ 
+            WebkitMaskImage: 'radial-gradient(circle at center, black 30%, transparent 80%)',
+            maskImage: 'radial-gradient(circle at center, black 30%, transparent 80%)'
+          }}
+        />
+        
+        {/* Grain/Noise Texture */}
+        <div className="absolute inset-0 noise opacity-[0.03] mix-blend-overlay" />
+
+        {/* Animated Glows */}
+        <motion.div 
+          animate={{ 
+            scale: [1, 1.2, 1],
+            opacity: [0.15, 0.45, 0.15]
+          }}
+          transition={{ 
+            duration: 10, 
+            repeat: Infinity, 
+            ease: "easeInOut" 
+          }}
+          className="absolute top-1/4 left-1/4 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-brand/20 blur-[100px] rounded-full" 
+        />
+        
+        <motion.div 
+          animate={{ 
+            scale: [1.2, 1, 1.2],
+            opacity: [0.1, 0.2, 0.1]
+          }}
+          transition={{ 
+            duration: 12, 
+            repeat: Infinity, 
+            ease: "easeInOut",
+            delay: 2
+          }}
+          className="absolute bottom-1/4 right-1/4 translate-x-1/2 translate-y-1/2 w-[700px] h-[700px] bg-blue-500/10 blur-[120px] rounded-full" 
+        />
+
+        {/* Central Glow for readability */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[600px] bg-brand/5 blur-[150px] rounded-full opacity-50" />
+      </div>
+
+      <div className="max-w-7xl mx-auto w-full relative z-10">
         <motion.div
           className="text-center"
           initial={{ opacity: 0, y: 30 }}
