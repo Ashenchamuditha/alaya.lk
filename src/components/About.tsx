@@ -3,7 +3,7 @@ import SectionHeading from './SectionHeading';
 
 const About = () => {
   return (
-    <section id="about" className="py-32 px-6 bg-surface-lighter/30">
+    <section id="about" className="py-20 md:py-32 px-6 bg-surface-lighter/30">
       <div className="max-w-7xl mx-auto">
         <div className="max-w-3xl mb-20">
           <SectionHeading subtitle="My Story">About Me</SectionHeading>

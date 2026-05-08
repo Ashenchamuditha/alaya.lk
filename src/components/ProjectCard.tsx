@@ -52,12 +52,35 @@ const ProjectCard = ({ project, index }: ProjectCardProps) => (
         ))}
       </div>
       
-      <h3 className="text-2xl font-display font-bold text-white mb-3 flex items-center justify-between">
-        {project.title}
-        {project.githubUrl && (
-          <a href={project.githubUrl} target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-white transition-colors"><Github size={18} /></a>
-        )}
-      </h3>
+      <div className="flex items-start justify-between mb-3 gap-4">
+        <h3 className="text-2xl font-display font-bold text-white">
+          {project.title}
+        </h3>
+        <div className="flex gap-3 pt-1">
+          {project.githubUrl && (
+            <a 
+              href={project.githubUrl} 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="text-gray-500 hover:text-white transition-colors p-1"
+              title="View GitHub Repository"
+            >
+              <Github size={20} />
+            </a>
+          )}
+          {project.liveUrl && !project.isLiveBlocked && (
+            <a 
+              href={project.liveUrl} 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="text-gray-500 hover:text-brand transition-colors p-1"
+              title="Visit Live Site"
+            >
+              <ExternalLink size={20} />
+            </a>
+          )}
+        </div>
+      </div>
       
       <p className="text-gray-400 text-sm leading-relaxed mb-6 italic">
         "{project.description}"

@@ -24,7 +24,7 @@ const Hero = () => {
   };
 
   return (
-    <header className="relative min-h-screen flex items-center justify-center pt-32 pb-20 px-6 overflow-hidden">
+    <header className="relative min-h-screen flex items-center justify-center pt-24 pb-12 md:pt-32 md:pb-20 px-6 overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
         {/* Background Image - High Visibility Tech Image */}
@@ -92,12 +92,12 @@ const Hero = () => {
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand/10 border border-brand/20 text-brand text-xs font-bold uppercase tracking-widest mb-8">
             <Sparkles size={14} /> Open for Collaboration
           </div>
-          <h1 className="text-5xl md:text-9xl font-display font-bold text-white leading-[1.1] mb-8">
+          <h1 className="text-4xl sm:text-5xl md:text-9xl font-display font-bold text-white leading-[1.1] mb-8">
             Ashen <br />
             <span className="text-brand text-glow italic">Chamuditha.</span>
           </h1>
-          <p className="text-xl md:text-2xl text-gray-400 max-w-2xl mx-auto mb-10 leading-relaxed font-display font-medium">
-            Full-Stack Engineer building high-performance systems and architecting seamless digital experiences.
+          <p className="text-lg md:text-2xl text-gray-400 max-w-2xl mx-auto mb-10 leading-relaxed font-display font-medium px-4">
+            Full-Stack Engineer engineering resilient digital solutions for industrial challenges and social impact.
           </p>
           
           <div className="flex flex-wrap gap-4 items-center justify-center">
@@ -105,7 +105,7 @@ const Hero = () => {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
-              className="px-10 py-5 bg-white text-black font-bold rounded-xl flex items-center gap-2 hover:bg-brand hover:text-white transition-all shadow-lg text-lg"
+              className="px-8 py-4 md:px-10 md:py-5 bg-white text-black font-bold rounded-xl flex items-center gap-2 hover:bg-brand hover:text-white transition-all shadow-lg text-base md:text-lg"
             >
               Top Work <ChevronRight size={20} />
             </motion.button>
@@ -114,7 +114,7 @@ const Hero = () => {
               onClick={() => setIsModalOpen(true)}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="px-10 py-5 border border-white/20 text-white font-bold rounded-xl flex items-center gap-2 hover:bg-white/5 transition-all text-lg"
+              className="px-8 py-4 md:px-10 md:py-5 border border-white/20 text-white font-bold rounded-xl flex items-center gap-2 hover:bg-white/5 transition-all text-base md:text-lg"
             >
               Download Resume <ExternalLink size={20} />
             </motion.button>

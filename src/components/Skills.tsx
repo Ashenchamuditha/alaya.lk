@@ -11,7 +11,7 @@ const Skills = () => {
       <div className="max-w-7xl mx-auto">
         <SectionHeading subtitle="Technical Expertise">Skills Cloud</SectionHeading>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12">
           {skillCategories.map((category) => (
             <div key={category} className="space-y-6">
               <h4 className="text-white font-display font-bold text-lg flex items-center gap-4 group">
